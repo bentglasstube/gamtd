@@ -1,10 +1,32 @@
 #include "game_screen.h"
 
+#include "components.h"
 #include "title_screen.h"
 
-GameScreen::GameScreen() {}
+GameScreen::GameScreen() {
+  // initialize game entities
+
+  // load_resources();
+  // create_map();
+  // create_hud();
+  // wave_controller();
+  // tooltip();
+  // ui_context();
+  //
+
+  {
+    auto e = reg_.create();
+    reg_.emplace<Player>(e);
+    reg_.emplace<Bank>(e, 150.0f);
+    reg_.emplace<Investor>(e, 0.003f);
+  }
+
+
+}
 
 bool GameScreen::update(const Input& input, Audio& audio, unsigned int elapsed) {
+
+
   return true;
 }
 

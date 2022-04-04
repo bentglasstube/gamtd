@@ -16,10 +16,22 @@ cc_binary(
 )
 
 cc_library(
+    name = "components",
+    hdrs = ["components.h"],
+    deps = [
+        "@entt//:entt",
+        ":types",
+    ],
+)
+
+cc_library(
     name = "config",
     srcs = ["config.cc"],
     hdrs = ["config.h"],
-    deps = ["@gam//:game"],
+    deps = [
+        "@gam//:game",
+        ":types",
+    ],
 )
 
 cc_library(
@@ -35,5 +47,11 @@ cc_library(
     deps = [
         "@gam//:screen",
         "@entt//:entt",
+        ":components",
     ],
+)
+
+cc_library(
+    name = "types",
+    hdrs = ["types.h"],
 )

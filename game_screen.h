@@ -1,5 +1,7 @@
 #pragma once
 
+#include "entt/entity/registry.hpp"
+
 #include "screen.h"
 
 class GameScreen : public Screen {
@@ -12,5 +14,9 @@ class GameScreen : public Screen {
     Screen* next_screen() const override;
 
   private:
+
+    entt::registry reg_;
+
+    void update_sim(float dt);
 
 };
